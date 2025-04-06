@@ -1,54 +1,36 @@
-#line = ""
-#for i in range(3):
-    #for j in range(3):
-    #    line += str(i) + str(j) + " "
-    #print(line)
-    #line = ""
-
-
-# a_list = [0, 1, 2, 3, 4]
-#print(a_list)
-#a_list[2] = 10
-#print(a_list[2])
 
 
 
-#a_list = [0, 1, 2, 3, 4]
-#two_d_list = [ [0, 1, 2, 3, 4],
-              #[5, 6, 7, 8, 9],
-              #[10, 11, 12, 13, 14]
- #             ]
-#print(two_d_list)
-#print(two_d_list[1])
-#print(two_d_list[1][1])
+class FancyDict:
+    def __init__(self):
+        self.grid_dict = {}
+    
+    def modify_dict(self, grid_dict):
+        for key, value in self.grid_dict.items():
+        # print(key)
+        # print(value)
+            for key_inner, value_inner in value.items():
+            # print(key_inner)
+            # print(value_inner)
+                self.grid_dict[key][key_inner] = int(input("Enter a Number at " +key + " " + key_inner + ": " ))
 
+    
+    def sum_region_dict(grid, row):
+        global total
+        print(grid)
+        for key, value in grid.items():
+            print(key)
+            print(value)
+            for key_inner, value_inner in value.items():
+                print(key_inner)
+                print(value_inner)
+                total += value_inner
 
-import random
-two_d_visual_list = []
-visual_line = []
-for i in range(3):
-    for j in range(3):
-        visual_line.append(random.randint(0,1))
-    two_d_visual_list.append(line)
-    visual_line = []
+        print(total)
+    
 
-print(two_d_visual_list)
+fancyDict = FancyDict()
+fancyDict.modify_dict(0)
+fancyDict.sum_region_dict(0)
 
-two_d_mine_list = []
-mine_line = []
-for i in range(3):
-    for j in range(3):
-        mine_line.append(random.randint(0,1))
-    two_d_mine_list.append(line)
-    mine_line = []
-
-print(two_d_mine_list)
-
-input_x = int(input("Input x position: "))
-input_y = int(input("Input y position: "))
-
-if(two_d_mine_list[input_x] [input_y] == 1):
-    print("You lose")
-else:
-    print("Keep going")
 
